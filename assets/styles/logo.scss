@@ -1,0 +1,17 @@
+.logo {
+  width:100%;
+  height:100vh;background-color: #3b82f6;
+  background: url("../images/EmmausConnect_1x1_RVB.jpg") no-repeat center center;
+  background-size: 100% auto;
+  background-position: center center;
+  animation: shrink 3s ease-out;
+}
+
+@keyframes shrink {
+  0% {
+    background-size: 0 auto;
+  }
+  100% {
+    background-size: 100% auto;
+  }
+}
