@@ -29,7 +29,7 @@ class Device
     private ?Storage $storage = null;
 
     #[ORM\ManyToOne(inversedBy: 'devices')]
-    private ?sizeScreen $sizeScreen = null;
+    private ?SizeScreen $sizeScreen = null;
 
     #[ORM\ManyToOne(inversedBy: 'devices')]
     private ?Camera $camera = null;
@@ -105,12 +105,12 @@ class Device
         return $this;
     }
 
-    public function getSizeScreen(): ?sizeScreen
+    public function getSizeScreen(): ?SizeScreen
     {
         return $this->sizeScreen;
     }
 
-    public function setSizeScreen(?sizeScreen $sizeScreen): static
+    public function setSizeScreen(?SizeScreen $sizeScreen): static
     {
         $this->sizeScreen = $sizeScreen;
 
