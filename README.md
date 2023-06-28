@@ -1,11 +1,12 @@
-# Create for hakathon 2023
+# Create for hackathon 2023
 
 ## members : 
-- Nicolas Palay
-- ahmed salek
-- Maxime Gonotey-Grimoux
-- Estèphe Fath
-- Youssouf,Soudjay Abdulkader
+- Nicolas PALAY
+- ahmed SALEK
+- Maxime GONOTEY-GRIMOUX
+- Estèphe FATH
+- Youssouf ABDULKADER
+- Caroline LEBON
 
 ### for start the Projet : 
 - create .env.local and add your database
