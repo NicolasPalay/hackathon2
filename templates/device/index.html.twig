@@ -3,37 +3,28 @@
 {% block title %}Device index{% endblock %}
 
 {% block body %}
-    <h1>Device index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Stock</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h1>Listes des Appareils</h1>
+<ul>
         {% for device in devices %}
-            <tr>
-                <td>{{ device.id }}</td>
-                <td>{{ device.name }}</td>
-                <td>{{ device.image }}</td>
-                <td>{{ device.stock }}</td>
-                <td>
+
+            <li>{{ device.brand.nameBrand }}</li>
+                <li>{{ device.name }}</li>
+                <li><img src="{{ device.image }}" alt=""></li>
+                <li>{{ device.stock }}</li>
+                <li>{{ device.memory.numberMemory }}</li>
+                <li>{{ device.sizeScreen.numberSizeScreen }}</li>
+            <li>{{ device.state.nameState }}</li>
+            <li>{{ device.camera.numberPixel }}</li>
+                <li>
                     <a href="{{ path('app_device_show', {'id': device.id}) }}">show</a>
                     <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
-                </td>
-            </tr>
+
+                </li>
+
         {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
+            </ul>
         {% endfor %}
-        </tbody>
-    </table>
+
 
     <a href="{{ path('app_device_new') }}">Create new</a>
 {% endblock %}
