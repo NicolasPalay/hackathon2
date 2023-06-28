@@ -6,9 +6,9 @@ $ec-yellow: #FCB900;
 $ec-blue: #233D8D;
 $ec-azur: #00acb0;
 $ec-azur-50 :rgba(0, 172, 176,0.5);
-$ec-main-white: #FFFAF0;
-$ec-box-shadow: 6px 6px 15px $ec-blue;
-$ec-border-form: 2px solid $ec-blue;
+$ec-main-white: #FFF;
+$ec-box-shadow: 6px 6px 15px $ec-azur;
+$ec-border-form: 2px solid $ec-azur;
 $ec-border-radius: 0.625rem;
 
 /*font*/
@@ -16,7 +16,7 @@ $ec-border-radius: 0.625rem;
 $ec-text-font-family: 'Open Sans', serif;
 $ec-title-font-family: 'Wire One', serif;
 $ec-title-size: 3rem;
-$ec-text-font-size: 1.75rem;
+$ec-text-font-size: 1rem;
 
 $ec-check-border: 2px solid $ec-blue;
 $ec-check-background: $ec-main-white;
@@ -71,8 +71,44 @@ h4,p,li{
 }
 
 h1,h2{
-  margin:0;
+  margin:40px auto;
   font-family: $ec-title-font-family;
+  font-size: $ec-title-size;
+  width: max-content;
+
+}
+.bi{font-size: 1.7em}
+input.ec-input{
+    font-family: $ec-text-font-family;
+    font-size: $ec-text-font-size;
+    border: none;
+  border-radius: $ec-border-radius;
+  background-color: $ec-azur-50 !important;
+    border-bottom: 3px solid $ec-blue;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+input.ec-input:focus{
+    outline: none;
+    border-bottom: 3px solid $ec-azur;
+}
+.ec-btn{
+  background-color: $ec-azur;
+  color: $ec-yellow;
+  border: none;
+  border-radius: $ec-border-radius;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  font-family: $ec-text-font-family;
+  cursor: pointer;
+    margin: 30px auto 0;
+  transition: all 0.3s ease-in-out;
+}
+.ec-btn:hover{
+  background-color: $ec-azur;
+    color: $ec-main-white;
 }
 
 .ec-link-navbar:link {
@@ -89,12 +125,7 @@ h1,h2{
   color: $ec-blue;
   text-decoration: none;
 }
-section{
-  padding: 50px 0;
-  width:50%;
-  min-width: 540px;
-  margin: 0 auto;
-}
+
 
 @media screen and (max-width: 430px) {
   .ec-title{
