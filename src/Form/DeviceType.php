@@ -15,12 +15,12 @@ class DeviceType extends AbstractType
             ->add('name')
             ->add('image')
             ->add('stock')
-            //->add('memory')
-            //->add('storage')
-            //->add('sizeScreen')
-            //->add('camera')
-            //->add('state')
-            //->add('brand')
+            ->add('memory',null, ['choice_label' => 'numberMemory'])
+            ->add('storage',null, ['choice_label' => 'numberStorage'])
+            ->add('sizeScreen',null, ['choice_label' => 'numberSizeScreen'])
+            ->add('camera',null, ['choice_label' => 'numberPixelgit '])
+            ->add('state' ,null, ['choice_label' => 'nameState'])
+            ->add('brand',null, ['choice_label' => 'nameBrand'])
         ;
     }
 
