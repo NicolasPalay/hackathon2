@@ -3,22 +3,30 @@
 {% block title %}Device{% endblock %}
 
 {% block body %}
+    <div class="container hk-listing-show">
     <h1> {{ device.name }}</h1>
     <div class="hk-show-device">
         <ul class="hk-device-presentation">
-            <li>Marque : {{ device.brand.nameBrand }}</li>
+            <div>
+
+                    <img class="hk-img" src="{{ asset('build/images/' ~ device.image) }}" alt="">
+
+            </div>
+
             <li><img src="{{ device.image }}" alt=""></li>
         </ul>
+
         <ul class="hk-device-content">
-            <li>Stock {{ device.stock }}</li>
-            <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
-            <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
+            <li><h5> Marque : {{ device.brand.nameBrand }}</h5></li>
+            <li>Mémoire {{ device.memory.numberMemory }} </li>
+            <li>Taille {{ device.sizeScreen.numberSizeScreen }}</li>
             <li>{{ device.state.nameState }}</li>
-            <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
-            <li>
+            <li>Caméra {{ device.camera.numberPixel }}</li>
+            <li class="hk-listing-show py-2 px-3">Prix de vente | {{ price }} {{ '€'}}</li>
         </ul>
     </div>
     <div class="test">
     <a href="{{ path('device') }}" >Revenir a la liste</a>
-    </div>
+    </div></div>
+
 {% endblock %}

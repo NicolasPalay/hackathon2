@@ -65,8 +65,10 @@ class DeviceCrudController extends AbstractCrudController
             AssociationField::new('sizeScreen'),
             AssociationField::new('camera'),
             AssociationField::new('state'),
+
             AssociationField::new('brand'),
-            NumberField::new('price', 'Prix')->formatValue(function ($value, $entity) {
+             NumberField::new('price', 'Prix')->onlyOnIndex()
+         ->formatValue(function ($value, $entity) {
                 // Appel de la fonction de l'entité pour calculer le prix
                 $price = $this->priceDevice->calculate($entity);
                 $entity->setPrice($price);

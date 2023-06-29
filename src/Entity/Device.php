@@ -188,7 +188,7 @@ class Device
         $cameraPrice = $device->getCamera()->getPrice();
         $priceSimple = $memoryPrice+ $storagePrice + $sizeScreenPrice + $cameraPrice;
         $this->setPrice($priceSimple + ($priceSimple * $statePrice / 100));
-        return $priceSimple - ($priceSimple * $statePrice / 100);
+        return $priceSimple + ($priceSimple * $statePrice / 100);
 
     }
 }
