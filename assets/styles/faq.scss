@@ -1,0 +1,25 @@
+.ec-faq-title {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: $ec-title-font-family;
+  color: red;
+}
+
+.ec-faq h2 {
+  font-family: $ec-text-font-family;
+  font-weight: 900;
+  font-size: $ec-title-size;
+  color: $ec-blue;
+}
+
+.ec-faq h3 {
+  font-family: $ec-text-font-family;
+  font-size: 2rem;
+  color: $ec-azur;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ec-faq p {
+  text-align: center;
+}
