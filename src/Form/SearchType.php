@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Brand;
 use App\Search\SearchData;
-use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;

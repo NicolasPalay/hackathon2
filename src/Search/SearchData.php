@@ -9,26 +9,26 @@ class SearchData
     /**
      * @var int
      */
-    public $page = 1;
+    public int $page = 1;
 
     /**
      * @var string
      */
-    public $q = '';
+    public ?string $q = '';
 
     /**
      * @var Brand[]
      */
-    public $brand = [];
+    public array $brand = [];
 
     /**
      * @var null|integer
      */
-    public $max;
+    public ?int $max;
 
     /**
      * @var null|integer
      */
-    public $min;
+    public ?int $min;
 
 }

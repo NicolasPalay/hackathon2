@@ -81,7 +81,7 @@ class DeviceController extends AbstractController
         return $this->redirectToRoute('app_device_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/', name: 'app_device_index')]
+    #[Route('/', name: 'device')]
     public function showAllDevices(DeviceRepository $deviceRepository, Request $request): Response
     {
         $data = new SearchData();

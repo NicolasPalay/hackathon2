@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Device;
 use App\Search\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -67,11 +68,13 @@ class DeviceRepository extends ServiceEntityRepository
             $query->andWhere('b.id IN (:brand)')
                 ->setParameter('brand', $search->brand);
         }
-dd($query);
+
         return $query->getQuery()->getResult();
     }
 
-
+    /*private function getSearchQuery(SearchData $search, $ignorePrice = false): QueryBuilder
+    {
+    }*/
 
 //    /**
 //     * @return Device[] Returns an array of Device objects
