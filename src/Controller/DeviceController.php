@@ -7,6 +7,7 @@ use App\Form\DeviceType;
 use App\Form\SearchType;
 use App\Repository\DeviceRepository;
 use App\Search\SearchData;
+use App\Services\PriceDevice;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +21,7 @@ class DeviceController extends AbstractController
     {
         return $this->render('device/index.html.twig', [
             'devices' => $deviceRepository->findAll(),
+
         ]);
     }*/
 
@@ -43,10 +45,11 @@ class DeviceController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_device_show', methods: ['GET'])]
-    public function show(Device $device): Response
+    public function show(Device $device, PriceDevice $Pricedevice): Response
     {
         return $this->render('device/show.html.twig', [
             'device' => $device,
+            'price' => $Pricedevice->calculate($device)
         ]);
     }
 
