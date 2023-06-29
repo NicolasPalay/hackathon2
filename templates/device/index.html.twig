@@ -4,12 +4,6 @@
 
 {% block body %}
 
-    <h1>Listes des Appareils</h1>
-<ul>
-        {% for device in devices %}
-{{ dump(device) }}
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -20,21 +14,21 @@
                     {% for device in devices %}
                         {% include '_includes/card.html.twig' with {device: device} only %}
                         <div class="hk-li">
-                        {#<li>{{ device.brand.nameBrand }}</li>
+                            {#<li>{{ device.brand.nameBrand }}</li>
                         <li>{{ device.name }}</li>
                           <li><img src="{{ device.image }}" alt=""></li>#}
-                        <li>Stock {{ device.stock }}</li>
-                        <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
-                        <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
-                        <li>{{ device.state.nameState }}</li>
-                        <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
+                            <li>Stock {{ device.stock }}</li>
+                            <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
+                            <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
+                            <li>{{ device.state.nameState }}</li>
+                            <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
                             <li>
                                 <div class="test">
                                     <div><a href="{{ path('app_device_show', {'id': device.id}) }}">Voir plus</a></div>
                                     <a href="{{ path('app_device_edit', {'id': device.id}) }}">Modifier</a>
                                 </div>
-                        </li>
-                    </div>
+                            </li>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
