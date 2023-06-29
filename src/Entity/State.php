@@ -28,7 +28,10 @@ class State
     {
         $this->devices = new ArrayCollection();
     }
-
+    public function __toString(): string
+    {
+        return $this->nameState;
+    }
     public function getId(): ?int
     {
         return $this->id;
