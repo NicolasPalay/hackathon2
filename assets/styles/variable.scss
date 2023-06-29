@@ -78,49 +78,6 @@ h1,h2{
 
 }
 
-.bi{font-size: 1.7em}
-input.ec-input, #registration_form_email, #registration_form_plainPassword{
-
-.bi{font-size: 1.7em;}
-input.ec-input{
-
-    font-family: $ec-text-font-family;
-    font-size: $ec-text-font-size;
-    border: none;
-  border-radius: $ec-border-radius;
-  background: none !important;
-    border-bottom: 3px solid $ec-blue;
-    padding: 10px 15px;
-    margin: 10px 0;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-}
-input.ec-input:focus{
-    outline: none;
-    border-bottom: 3px solid $ec-azur;
-}
-.ec-btn{
-  background-color: $ec-azur;
-  color: $ec-yellow;
-  border: none;
-  border-radius: $ec-border-radius;
-  padding: 10px 30px;
-  font-size: 1.25rem;
-  font-family: $ec-text-font-family;
-  cursor: pointer;
-    margin: 30px auto 0;
-  transition: all 0.3s ease-in-out;
-}
-.ec-btn:hover{
-  background-color: $ec-azur;
-    color: $ec-main-white;
-}
-
-.ec-link-navbar:link {
-  color: $ec-blue;
-  text-decoration: none;
-}
-
 .ec-link-navbar:visited {
   color: $ec-blue;
   text-decoration: none;
@@ -140,4 +97,4 @@ input.ec-input:focus{
     font-size: 22px;
     margin-bottom: 5px !important;
   }
-}}
+}
