@@ -46,8 +46,9 @@ class DeviceRepository extends ServiceEntityRepository
     {
         $query = $this
             ->createQueryBuilder('d')
-            ->select('b', 'd')
-            ->join('d.brand', 'b');
+            ->leftJoin('d.brand', 'b');
+            //->select('b', 'd')
+            //->join('d.brand', 'b');
 
         if (!empty($search->q)) {
             $query->andWhere('d.name LIKE :q')
@@ -64,10 +65,13 @@ class DeviceRepository extends ServiceEntityRepository
                 ->setParameter('max', $search->max);
         }*/
 
-        if (!empty($search->categories)) {
-            $query->andWhere('b.id IN (:brand)')
+        if (!empty($search->brand)) {
+            $query = $query
+                ->andWhere('b.id IN (:brand)')
                 ->setParameter('brand', $search->brand);
         }
+
+        //$query = $query->getQuery()->getResult();
 
         return $query->getQuery()->getResult();
     }
