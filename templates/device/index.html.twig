@@ -3,7 +3,23 @@
 {% block title %}Device index{% endblock %}
 
 {% block body %}
-    <h1>Device index</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {% include '_includes/filter.html.twig' with {form: form} only %}
+            </div>
+            <div class="col-md-9">
+                <div class="grid">
+                    {% for device in devices %}
+                        {% include '_includes/card.html.twig' with {device: device} only %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {#  <h1>Device index</h1>
 
     <table class="table">
         <thead>
@@ -35,5 +51,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_device_new') }}">Create new</a>
+    <a href="{{ path('app_device_new') }}">Create new</a>#}
 {% endblock %}

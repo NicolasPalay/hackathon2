@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Device;
+use App\Search\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -39,6 +40,39 @@ class DeviceRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findSearch(SearchData $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('d')
+            ->select('b', 'd')
+            ->join('d.brand', 'b');
+
+        if (!empty($search->q)) {
+            $query->andWhere('d.name LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        /*if (!empty($search->min)) {
+            $query->andWhere('d.price >= :min')
+                ->setParameter('min', $search->min);
+        }
+
+        if (!empty($search->max)) {
+            $query->andWhere('d.price <= :max')
+                ->setParameter('max', $search->max);
+        }*/
+
+        if (!empty($search->categories)) {
+            $query->andWhere('b.id IN (:brand)')
+                ->setParameter('brand', $search->brand);
+        }
+dd($query);
+        return $query->getQuery()->getResult();
+    }
+
+
+
 //    /**
 //     * @return Device[] Returns an array of Device objects
 //     */
@@ -63,4 +97,5 @@ class DeviceRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
 }
