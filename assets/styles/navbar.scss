@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  height: 10vh;
+  background-color: $ec-azur;
+}
+
+.navbar img {
+  height: 8vh;
+}
+
+.bi {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 5vh;
+  color: $ec-yellow;
+}
+
+.bi-box-arrow-left {
+  color: white;
+  font-weight: 800;
+}
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
