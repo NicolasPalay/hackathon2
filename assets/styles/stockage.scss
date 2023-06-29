@@ -1,0 +1,53 @@
+.ec-title-storage{
+  display: flex;
+  flex-direction: row-reverse;
+  border: 2px solid $ec-azur;
+  margin-left: 20%;
+  margin-right: 20px;
+  height: 60px;
+  margin-top: 25px;
+}
+.ec-sub-title-storage{
+  font-weight: 700;
+  margin-top: -5px;
+}
+.en-device-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.en-device-brand {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  $ec-text-font-family: 'Open Sans', serif;
+  $ec-text-font-size: 1rem;
+
+}
+
+.en-device-stock {
+  font-weight: bold;
+  color: #555;
+  $ec-text-font-size: 1rem;
+  padding: 20px;
+  position:relative;
+  left: 285px;
+}
+.ec-btn-storage-edit-delete{
+display: flex;
+  justify-content: space-around;
+}
+.ec-btn-storage{
+  background-color: $ec-blue;
+  border-radius: 10px;
+  width: 100px;
+  color: #ffffff;
+}
+.ec-btn-storage-delete{
+ background-color: $ec-blue;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
