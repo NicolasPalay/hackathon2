@@ -1,25 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Wire+One&display=swap');
+$ec-main-white: #FFFAF0;
 
+/*couleur*/
+$ec-yellow: #FCB900;
+$ec-blue: #233D8D;
+$ec-azur: #00acb0;
+$ec-azur-50 :rgba(0, 172, 176,0.5);
+$ec-main-white: #FFF;
+$ec-box-shadow: 6px 6px 15px $ec-azur;
+$ec-border-form: 2px solid $ec-azur;
+$ec-border-radius: 0.625rem;
 
-$iv-main-white: #FFFAF0;
-$iv-background-color: #F4EDDB;
-$iv-main-darkgrey: #323232;
-$iv-med-grey: #5e5b5b;
-$iv-goldBM: #B58654;
-$iv-taupe: #D3BDA5;
-$iv-box-shadow: 6px 6px 15px $iv-taupe;
-$iv-border-form: 2px solid $iv-goldBM;
-$iv-border-radius: 0.625rem;
-$iv-border-radius-check: 0.5rem;
-$iv-text-font-size: 1.75rem;
-/*$iv-mobile-text-font-size: 2rem;*/
-$iv-text-font-family: 'Crimson Text', serif;
-$iv-title-font-family: 'Playfair Display', serif;
-$iv-title-size: 3.75rem;
-$iv-mobile-title-font-size:2rem;
-$iv-check-border: 2px solid $iv-goldBM;
-$iv-check-background: $iv-main-white;
-/*$iv-mobile-assembly-card-name-font-size: 20px;*/
+/*font*/
 
+$ec-text-font-family: 'Open Sans', serif;
+$ec-title-font-family: 'Wire One', serif;
+$ec-title-size: 3rem;
+$ec-text-font-size: 1rem;
+
+$ec-check-border: 2px solid $ec-blue;
+$ec-check-background: $ec-main-white;
+
+$ec-border-radius-check: 0.5rem;
 
 
 * {
@@ -33,80 +35,103 @@ body {
   background-position: top right;
 }
 
-.iv-title{
-  font-family: $iv-title-font-family;
-  color: $iv-goldBM;
-  font-size: 48px;
+.ec-title{
+  font-family: $ec-title-font-family;
+  color: $ec-blue;
+  font-size: $ec-title-size;
   line-height: 64px;
   font-weight: 400;
   text-align: center;
 }
 
-.iv-sub-title {
-  font-family: $iv-title-font-family;
-  color: $iv-main-darkgrey;
-  font-size: 40px;
+.ec-sub-title {
+  font-family: $ec-title-font-family;
+  color: $ec-blue;
+  font-size: $ec-title-size - 0.6rem;
   line-height: 55px;
   font-weight: 400;
   text-align: center;
   margin-bottom: 30px !important;
 }
 
-.iv-color {
-  color: $iv-goldBM;
+.ec-color {
+  color: $ec-blue;
 }
 
-.iv-dk-grey {
-  color: $iv-main-darkgrey;
+.ec-dk-blue {
+  color: $ec-blue;
 }
 
-.iv-med-grey {
-  color: $iv-med-grey;
+.ec-med-blue {
+  color: $ec-blue;
 }
 
-h4, h2{
-  font-family: $iv-text-font-family;
-}
-h4 {
-  font-size: $iv-text-font-size;
+h4,p,li{
+  font-family: $ec-text-font-family;
 }
 
-p {
-  color: $iv-main-darkgrey;
+h1,h2{
+  margin:40px auto;
+  font-family: $ec-title-font-family;
+  font-size: $ec-title-size;
+  width: max-content;
+
 }
-h1{
-  margin:0;
-  font-family: $iv-title-font-family;
+.bi{font-size: 1.7em}
+input.ec-input{
+    font-family: $ec-text-font-family;
+    font-size: $ec-text-font-size;
+    border: none;
+  border-radius: $ec-border-radius;
+  background-color: $ec-azur-50 !important;
+    border-bottom: 3px solid $ec-blue;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+input.ec-input:focus{
+    outline: none;
+    border-bottom: 3px solid $ec-azur;
+}
+.ec-btn{
+  background-color: $ec-azur;
+  color: $ec-yellow;
+  border: none;
+  border-radius: $ec-border-radius;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  font-family: $ec-text-font-family;
+  cursor: pointer;
+    margin: 30px auto 0;
+  transition: all 0.3s ease-in-out;
+}
+.ec-btn:hover{
+  background-color: $ec-azur;
+    color: $ec-main-white;
 }
 
-.iv-link-navbar:link {
-  color: $iv-goldBM;
+.ec-link-navbar:link {
+  color: $ec-blue;
   text-decoration: none;
 }
 
-.iv-link-navbar:visited {
-  color: $iv-goldBM;
+.ec-link-navbar:visited {
+  color: $ec-blue;
   text-decoration: none;
 }
 
-.iv-link-navbar:hover {
-  color: $iv-goldBM;
+.ec-link-navbar:hover {
+  color: $ec-blue;
   text-decoration: none;
 }
 
-::placeholder {
-  color: $iv-med-grey;
-}
-
-input[type="date" i] {
-  color: $iv-med-grey;
-}
 
 @media screen and (max-width: 430px) {
-  .iv-title{
+  .ec-title{
     font-size: 25px;
   }
-  .iv-sub-title {
+  .ec-sub-title {
     font-size: 22px;
     margin-bottom: 5px !important;
   }
