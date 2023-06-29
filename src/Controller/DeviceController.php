@@ -26,13 +26,14 @@ class DeviceController extends AbstractController
     }*/
 
     #[Route('/new', name: 'app_device_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, DeviceRepository $deviceRepository): Response
+    public function new(Request $request, DeviceRepository $deviceRepository, PriceDevice $Pricedevice): Response
     {
         $device = new Device();
         $form = $this->createForm(DeviceType::class, $device);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $device->setPrice($Pricedevice->calculate($device));
             $deviceRepository->save($device, true);
 
             return $this->redirectToRoute('app_device_index', [], Response::HTTP_SEE_OTHER);
