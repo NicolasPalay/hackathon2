@@ -3,28 +3,43 @@
 {% block title %}Device index{% endblock %}
 
 {% block body %}
+
     <h1>Listes des Appareils</h1>
 <ul>
         {% for device in devices %}
 {{ dump(device) }}
-         <li>{{ device.brand.nameBrand }}</li>
-            <li>{{ device.name }}</li>
-                <li><img src="{{ device.image }}" alt=""></li>
-                <li>{{ device.stock }}</li>
-                <li>{{ device.memory.numberMemory }}</li>
-                <li>{{ device.sizeScreen.numberSizeScreen }}</li>
-            <li>{{ device.state.nameState }}</li>
-            <li>{{ device.camera.numberPixel }}</li>
-            <li>{{ device.price }}</li>
-                <li>
-                    <a href="{{ path('app_device_show', {'id': device.id}) }}">show</a>
-                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
 
-                </li>
 
-        {% else %}
-            </ul>
-        {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {% include '_includes/filter.html.twig' with {form: form} only %}
+            </div>
+            <div class="col-md-9">
+                <div class="grid">
+                    {% for device in devices %}
+                        {% include '_includes/card.html.twig' with {device: device} only %}
+                        <div class="hk-li">
+                        {#<li>{{ device.brand.nameBrand }}</li>
+                        <li>{{ device.name }}</li>
+                          <li><img src="{{ device.image }}" alt=""></li>#}
+                        <li>Stock {{ device.stock }}</li>
+                        <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
+                        <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
+                        <li>{{ device.state.nameState }}</li>
+                        <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
+                            <li>
+                                <div class="test">
+                                    <div><a href="{{ path('app_device_show', {'id': device.id}) }}">Voir plus</a></div>
+                                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">Modifier</a>
+                                </div>
+                        </li>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <a href="{{ path('app_device_new') }}">Create new</a>

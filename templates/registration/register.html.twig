@@ -3,7 +3,10 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<h1 class="">Inscription</h1>
+<section>
+    <article>
+        <form method="post" class="d-flex flex-column justify-content-md-center">
 
     {{ form_errors(registrationForm) }}
 
@@ -14,6 +17,9 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn ec-btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
+        </form>
+    </article>
+</section>
 {% endblock %}

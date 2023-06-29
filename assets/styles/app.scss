@@ -1,7 +1,12 @@
 @import 'variable.scss';
 @import 'logo.scss';
+@import 'stockage.scss';
+@import "card";
+@import "devices";
 @import 'navbar.scss';
+@import "device";
 
 body {
     background-color: $ec-main-white;
 }
+
