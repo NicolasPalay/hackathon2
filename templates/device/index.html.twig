@@ -23,9 +23,9 @@
                         <li>{{ device.state.nameState }}</li>
                         <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
                             <li>
-                                <div class="link-redirect">
-                                    <a href="{{ path('app_device_show', {'id': device.id}) }}">show</a>
-                                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
+                                <div class="test">
+                                    <div><a href="{{ path('app_device_show', {'id': device.id}) }}">Voir plus</a></div>
+                                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">Modifier</a>
                                 </div>
                         </li>
                     </div>
