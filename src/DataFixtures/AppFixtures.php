@@ -36,10 +36,13 @@ class AppFixtures extends Fixture
         $this->stateRepository = $stateRepository;
         $this->storageRepository = $storageRepository;
     }
+
+    const PRICE = [
+        94.5,99.75, 57.75,94.5,123.5, 49.5];
     const DEVICES = [
-        "Appel 10", "S 10", "Redmi note 12 ","xperia 5 iv", "p30", "6.2 Dual Sim"];
+        "Apple 10", "S 10", "Redmi note 12","xperia 5 iv", "p30", "6.2 Dual Sim"];
     const BRANDS = [
-        "Appel", "Samsum", "Xiaomi ","Sony", "Huawei", "Nokia"];
+        "Apple", "Samsung", "Xiaomi ","Sony", "Huawei", "Nokia"];
     const STORAGES = ["16 Go de stockage"=>10, "32 Go de stockage"=>15, "64 Go de stockage"=>20, "128 Go de stockage"=>25];
     const MEMORIES = ["1 Go de Ram"=>10, "2 Go de Ram"=>20, "3 Go de Ram"=>25, "4 Go de Ram"=>30];
     const SIZECAMERAS = [ "6 MP"=>10,"8 MP"=>15,"10 MP"=>20,"12 MP"=>25,"14 MP"=>30];
@@ -145,7 +148,7 @@ class AppFixtures extends Fixture
             $device->setName($value);
             $device->setImage($faker->imageUrl(640, 480, 'technics'));
             $device->setStock(rand(1, 6));
-
+            $device->setPrice(self::PRICE[$key]);
             $manager->persist($device);
         }
 
