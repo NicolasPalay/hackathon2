@@ -89,6 +89,8 @@ class DeviceController extends AbstractController
     public function showAllDevices(DeviceRepository $deviceRepository, Request $request): Response
     {
         $data = new SearchData();
+        $data->page= $request->get('page', 1);
+
         $data->page = $request->get('page', 1);
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);

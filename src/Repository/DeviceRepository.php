@@ -7,6 +7,8 @@ use App\Search\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Device>
@@ -18,9 +20,12 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class DeviceRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private PaginatorInterface $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Device::class);
+        $this->paginator = $paginator;
     }
 
     public function save(Device $entity, bool $flush = false): void
@@ -42,12 +47,13 @@ class DeviceRepository extends ServiceEntityRepository
     }
 
 
-    public function findSearch(SearchData $search): array
+    public function findSearch(SearchData $search): PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('d')
-            ->select('b', 'd')
-            ->join('d.brand', 'b');
+            ->leftJoin('d.brand', 'b');
+            //->select('b', 'd')
+            //->join('d.brand', 'b');
 
         if (!empty($search->q)) {
             $query->andWhere('d.name LIKE :q')
@@ -64,12 +70,27 @@ class DeviceRepository extends ServiceEntityRepository
                 ->setParameter('max', $search->max);
         }*/
 
-        if (!empty($search->categories)) {
-            $query->andWhere('b.id IN (:brand)')
+        if (!empty($search->brand)) {
+            $query = $query
+                ->andWhere('b.id IN (:brand)')
                 ->setParameter('brand', $search->brand);
         }
 
-        return $query->getQuery()->getResult();
+        //$query = $query->getQuery()->getResult();
+
+        /*$query->getQuery()->getResult();
+        return $this->paginator->paginate(
+            $query,
+            1,
+            3
+        );*/
+
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $search->page,
+            2
+        );
     }
 
     /*private function getSearchQuery(SearchData $search, $ignorePrice = false): QueryBuilder
