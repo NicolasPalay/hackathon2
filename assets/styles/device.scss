@@ -1,0 +1,22 @@
+.hk-show-device{
+  display: flex;
+}
+
+.hk-device-presentation{
+  display: flex;
+  flex-direction: column;
+}
+
+.hk-device-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.test a{
+  color: #233d8d;
+  text-decoration: none;
+  margin-left: 2em;
+  margin-bottom: 20em;
+}
