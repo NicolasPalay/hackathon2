@@ -76,8 +76,5 @@ class Brand
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->nameBrand;
-    }
+
 }
