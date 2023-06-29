@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 @import 'variable.scss';
 @import 'logo.scss';
 @import 'stockage.scss';
@@ -10,5 +11,8 @@
 
 body {
     background-color: $ec-main-white;
+}
+*{
+    font-family: 'Belanosima', sans-serif;
 }
 

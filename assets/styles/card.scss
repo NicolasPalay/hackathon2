@@ -13,9 +13,8 @@
 }
 
 .hk-filter-btn{
-  background: #233D8D;
-  color: white;
-  border: none;
+  border: 1px solid #00acb0;
+  color: #00acb0;
 }
 
 .hk-filter-btn:hover{
@@ -41,9 +40,9 @@ ul {
 
 .ec-faq-title {
   font-size: 4rem;
-  font-weight: 900;
+
   font-family: $ec-title-font-family;
-  color: red;
+
 }
 
 .ec-faq h2 {
@@ -66,3 +65,11 @@ ul {
 }
 
 .nav-link{color:white}
+.pagination {margin :20PX auto;}
+.hk-padding-block{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.hk-padding-block nav{margin-left: 32%;}
+.page-link{border : 1px solid #00acb0;color: #00acb0;}
+.page-link:focus{box-shadow: none; color :#FCB900;}
+.page-link:hover{color :#FCB900;}
+.active>.page-link, .page-link.active, .page-link:focus{background-color: #00acb0;border-color: #00acb0;}
+.disabled>.page-link, .page-link.disabled{background-color: white;border-color: #00acb0;}
