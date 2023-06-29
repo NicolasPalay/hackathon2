@@ -2,11 +2,23 @@
 
 .wrapper{
     background: url("/assets/images/EmmausConnectLogo.jpg") no-repeat 30% ;
-    background-position: top;
+    background-position:top;
 
 }
-
-
 .sidebar{
     background-color: #FCB900;
+}
+
+.btn-primary{
+   background-color:  #00ACB0;
+}
+.page-item.active .page-link{
+    background-color:  #00ACB0;
+}
+
+.datagrid thead .sorted {
+    box-shadow: inset 0 -2px 0 #00ACB0;
+}
+.content-top{
+    border-bottom: solid #00ACB0;
 }

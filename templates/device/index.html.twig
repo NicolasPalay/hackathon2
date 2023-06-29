@@ -18,14 +18,15 @@
                         <li>{{ device.name }}</li>
                           <li><img src="{{ device.image }}" alt=""></li>#}
                         <li>Stock {{ device.stock }}</li>
-                        <li>Mémoire {{ device.memory.numberMemory }}</li>
-                        <li>Taille {{ device.sizeScreen.numberSizeScreen }}</li>
+                        <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
+                        <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
                         <li>{{ device.state.nameState }}</li>
-                        <li>Caméra {{ device.camera.numberPixel }}</li>
-                        <li>
-                            <a href="{{ path('app_device_show', {'id': device.id}) }}">show</a>
-                            <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
-
+                        <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
+                            <li>
+                                <div class="link-redirect">
+                                    <a href="{{ path('app_device_show', {'id': device.id}) }}">show</a>
+                                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
+                                </div>
                         </li>
                     </div>
                     {% endfor %}

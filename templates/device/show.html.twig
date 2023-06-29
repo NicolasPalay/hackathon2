@@ -3,21 +3,23 @@
 {% block title %}Device{% endblock %}
 
 {% block body %}
-    <h1>Device {{ device.name }}</h1>
-<ul>
-    <li>Marque : {{ device.brand.nameBrand }}</li>
-    <li></li>
-    <li><img src="{{ device.image }}" alt=""></li>
-    <li>{{ device.stock }}</li>
-    <li>{{ device.memory.numberMemory }}</li>
-    <li>{{ device.sizeScreen.numberSizeScreen }}</li>
-    <li>{{ device.state.nameState }}</li>
-    <li>{{ device.camera.numberPixel }}</li>
-    <li>price {{ price }} €</li>
-    </ul>
-    <a href="{{ path('app_device_index') }}">back to list</a>
-
-    <a href="{{ path('app_device_edit', {'id': device.id}) }}">edit</a>
-
-    {{ include('device/_delete_form.html.twig') }}
+    <h1> {{ device.name }}</h1>
+    <div class="hk-show-device">
+        <ul class="hk-device-presentation">
+            <li>Marque : {{ device.brand.nameBrand }}</li>
+            <li><img src="{{ device.image }}" alt=""></li>
+        </ul>
+        <ul class="hk-device-content">
+            <li>Stock {{ device.stock }}</li>
+            <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
+            <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
+            <li>{{ device.state.nameState }}</li>
+            <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
+            <li>
+            <li>Prix {{ price }} €</li>
+        </ul>
+    </div>
+    <div class="test">
+    <a href="{{ path('device') }}" >back to list</a>
+    </div>
 {% endblock %}
