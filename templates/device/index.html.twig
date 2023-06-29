@@ -4,6 +4,12 @@
 
 {% block body %}
 
+    <h1>Listes des Appareils</h1>
+<ul>
+        {% for device in devices %}
+{{ dump(device) }}
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">

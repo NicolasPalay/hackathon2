@@ -24,6 +24,8 @@ class PriceDevice
         $statePrice = $device->getState()->getPourcentage();
         $cameraPrice = $device->getCamera()->getPrice();
         $priceSimple = $memoryPrice+ $storagePrice + $sizeScreenPrice + $cameraPrice;
-        return $priceSimple - ($priceSimple * $statePrice / 100);
+            $device->setPrice($priceSimple + ($priceSimple * $statePrice / 100));
+        return $device->getPrice();
+
     }
 }

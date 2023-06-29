@@ -19,8 +19,11 @@ class DeviceController extends AbstractController
     /*#[Route('/', name: 'app_device_index', methods: ['GET'])]
     public function index(DeviceRepository $deviceRepository): Response
     {
+
         return $this->render('device/index.html.twig', [
             'devices' => $deviceRepository->findAll(),
+
+
 
         ]);
     }*/

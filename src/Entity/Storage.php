@@ -28,7 +28,10 @@ class Storage
     {
         $this->devices = new ArrayCollection();
     }
-
+public function __toString(): string
+    {
+        return $this->numberStorage;
+    }
     public function getId(): ?int
     {
         return $this->id;
