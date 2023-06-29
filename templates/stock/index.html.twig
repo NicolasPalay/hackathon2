@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stock{% endblock %}
+
+{% block body %}
+     <div class="ec-title-storage">
+          <h2 class="ec-sub-title-storage">Stock</h2>
+          <h2 class="ec-sub-title-storage">Prix</h2>
+          <h2 class="ec-sub-title-storage">Marques</h2>
+     </div>
+    {% for device in devices %}
+        <div class="en-device-item">
+            <p class="en-device-brand">{{ device.name }}</p>
+            <p class="en-device-stock">{{ device.stock }}</p>
+        </div>
+    {% endfor %}
+    <div class="ec-btn-storage-edit-delete">
+        <a href="{{path('app_device_index')}}">  <button type="submit" class="ec-btn-storage">Modifer</button></a>
+        <a href="{{path('app_device_index')}}"><button type="submit" class="ec-btn-storage-delete">Supprimer</button></a>
+    </div>
+{% endblock %}
