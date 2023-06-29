@@ -6,9 +6,9 @@
     <h1>Listes des Appareils</h1>
 <ul>
         {% for device in devices %}
-
-            <li>{{ device.brand.nameBrand }}</li>
-                <li>{{ device.name }}</li>
+{{ dump(device) }}
+         <li>{{ device.brand.nameBrand }}</li>
+            <li>{{ device.name }}</li>
                 <li><img src="{{ device.image }}" alt=""></li>
                 <li>{{ device.stock }}</li>
                 <li>{{ device.memory.numberMemory }}</li>
