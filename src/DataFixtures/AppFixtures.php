@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
         $faker = Factory::create();
         $user = new User();
         $user->setEmail($faker->email());
-        $user->setRoles(['ROLE_UER']);
+        $user->setRoles(['ROLE_USER']);
         $user->setPlainPassword('123456');
         $manager->persist($user);
         $manager->flush();
