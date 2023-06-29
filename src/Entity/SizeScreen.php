@@ -28,7 +28,10 @@ class SizeScreen
     {
         $this->devices = new ArrayCollection();
     }
-
+    public function __toString(): string
+    {
+        return $this->numberSizeScreen;
+    }
     public function getId(): ?int
     {
         return $this->id;

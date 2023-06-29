@@ -25,7 +25,10 @@ class Brand
     {
         $this->devices = new ArrayCollection();
     }
-
+    public function __toString(): string
+    {
+        return $this->nameBrand;
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -73,8 +76,5 @@ class Brand
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->nameBrand;
-    }
+
 }
