@@ -1,0 +1,21 @@
+.ec-btn{
+  background-color: $ec-azur;
+  color: $ec-yellow;
+  border: none;
+  border-radius: $ec-border-radius;
+  padding: 10px 30px;
+  font-size: 1.25rem;
+  font-family: $ec-text-font-family;
+  cursor: pointer;
+  margin: 30px auto 0;
+  transition: all 0.3s ease-in-out;
+}
+.ec-btn:hover{
+  background-color: $ec-azur;
+  color: $ec-main-white;
+}
+
+.ec-link-navbar:link {
+  color: $ec-blue;
+  text-decoration: none;
+}
