@@ -5,7 +5,6 @@ use App\Entity\Brand;
 
 class SearchData
 {
-
     /**
      * @var int
      */
