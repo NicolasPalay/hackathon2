@@ -1,0 +1,12 @@
+/* public/css/admin.css */
+
+.wrapper{
+    background: url("/assets/images/EmmausConnectLogo.jpg") no-repeat 30% ;
+    background-position: top;
+
+}
+
+
+.sidebar{
+    background-color: #FCB900;
+}

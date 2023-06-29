@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeControlerController!{% endblock %}
+{% block title %}Accueil - Connexion{% endblock %}
 {% block navbar %}
 
 {% endblock %}
 {% block body %}
  <div class="d-flex flex-column align-items-center my-3">
-<a class="btn ec-btn my-5" href="{{ path('app_login') }}">Connexion</a>
-  <img class="w-75" src="{{ asset('build/images/EmmausConnect_1x1_RVB.3a686bf2.jpg') }}" alt="accueil" class="img-fluid">
+
+<a class="btn ec-btn ec-btn-home" href="{{ path('app_login') }}">Connect</a>
+  <img class="w-75" src="{{ asset('build/images/EmmausConnect_1x1_RVB.png') }}" alt="accueil">
+
  </div>
 
 {% endblock %}
