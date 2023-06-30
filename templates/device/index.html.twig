@@ -4,38 +4,48 @@
 
 {% block body %}
 
-    <div class="container">
+
+    <h1>Listes des Appareils</h1>
+
+    <div class="container ">
+
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 hk-listing">
                 {% include '_includes/filter.html.twig' with {form: form} only %}
             </div>
-            <div class="col-md-9">
-                <div class="grid">
-                    {% for device in devices %}
-                        {% include '_includes/card.html.twig' with {device: device} only %}
-                        <div class="hk-li">
-                            {#<li>{{ device.brand.nameBrand }}</li>
-                        <li>{{ device.name }}</li>
-                          <li><img src="{{ device.image }}" alt=""></li>#}
-                            <li>Stock {{ device.stock }}</li>
-                            <li>Mémoire {{ device.memory.numberMemory }} {{ '|' }} {{ device.memory.price }} {{ '€'}} </li>
-                            <li>Taille {{ device.sizeScreen.numberSizeScreen }} {{ '|' }} {{ device.sizeScreen.price }} {{ '€'}}</li>
-                            <li>{{ device.state.nameState }}</li>
-                            <li>Caméra {{ device.camera.numberPixel }} {{ '|' }} {{ device.camera.price }} {{ '€'}}</li>
-                            <li>
-                                <div class="test">
-                                    <div><a href="{{ path('app_device_show', {'id': device.id}) }}">Voir plus</a></div>
-                                    <a href="{{ path('app_device_edit', {'id': device.id}) }}">Modifier</a>
+
+            <div class="col-md-7 hk-listing">
+
+
+                        {% for device in devices %}
+                            {% include '_includes/card.html.twig' with {device: device} only %}
+                            <div class="hk-li">
+                                <div>
+                                    <a href="{{ path('app_device_show', {'id': device.id}) }}">
+                                        <img class="hk-img" src="{{ asset('build/images/' ~ device.image) }}" alt="">
+                                    </a>
                                 </div>
-                            </li>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div>
-                    {{ knp_pagination_render(devices) }}
-                </div>
+                                <ul>
+
+                                <li>
+                                    Mémoire {{ device.memory.numberMemory }}
+                                </li>
+                                <li>
+                                    Taille {{ device.sizeScreen.numberSizeScreen }}</li>
+                                <li>Etat {{ device.state.nameState }}</li>
+                                <li>
+                                    Caméra {{ device.camera.numberPixel }}</li>
+                               </ul>
+
+
+                            </div>
+
+                        {% endfor %}
             </div>
-        </div>
+            <div class="mx-auto w-50 hk-padding-block">
+                {{ knp_pagination_render(devices) }}
+            </div>
+            </div>
     </div>
 
 

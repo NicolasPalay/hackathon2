@@ -146,7 +146,7 @@ class AppFixtures extends Fixture
             $device->setState($state);
 
             $device->setName($value);
-            $device->setImage($faker->imageUrl(640, 480, 'technics'));
+            $device->setImage('phone' . $key . '.jpg');
             $device->setStock(rand(1, 6));
             $device->setPrice(self::PRICE[$key]);
             $manager->persist($device);

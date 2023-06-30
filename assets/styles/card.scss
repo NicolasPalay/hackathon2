@@ -1,19 +1,20 @@
 .hk-cards{
   margin-left: 10em;
-  width: 70%;
-  height: 70%;
+  width: 50%;
+
 }
 
 .hk-li{
-  margin-left: 10em;
-  margin-top: 1em;
-  margin-bottom: 7em;
+  display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+    align-items: center;
+  margin:2em;
 }
 
 .hk-filter-btn{
-  background: #233D8D;
-  color: white;
-  border: none;
+  border: 1px solid #00acb0;
+  color: #00acb0;
 }
 
 .hk-filter-btn:hover{
@@ -21,4 +22,54 @@
   border: solid;
   color: #233D8D;
 }
+.hk-top{top:40px !important;}
+.hk-img {width : 100%;}
+.hk-li div {display: block;width:140px}
+.hk-listing{border: 2px solid #00acb0; margin: 0 0 0 20px;
+  border-bottom: 5px solid #00acb0;
+  border-radius: 0.625rem;}
+ul {
 
+  padding:0 2rem;
+
+}
+
+.hk-listing-show{border: 2px solid #00acb0; margin: 50px auto;
+  border-bottom: 5px solid #00acb0;
+  border-radius: 0.625rem;}
+
+.ec-faq-title {
+  font-size: 4rem;
+
+  font-family: $ec-title-font-family;
+
+}
+
+.ec-faq h2 {
+  font-family: $ec-text-font-family;
+  font-weight: 900;
+  font-size: $ec-title-size;
+  color: $ec-blue;
+}
+
+.ec-faq h3 {
+  font-family: $ec-text-font-family;
+  font-size: 2rem;
+  color: $ec-azur;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ec-faq p {
+  text-align: center;
+}
+
+.nav-link{color:white}
+.pagination {margin :20PX auto;}
+.hk-padding-block{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.hk-padding-block nav{margin-left: 32%;}
+.page-link{border : 1px solid #00acb0;color: #00acb0;}
+.page-link:focus{box-shadow: none; color :#FCB900;}
+.page-link:hover{color :#FCB900;}
+.active>.page-link, .page-link.active, .page-link:focus{background-color: #00acb0;border-color: #00acb0;}
+.disabled>.page-link, .page-link.disabled{background-color: white;border-color: #00acb0;}

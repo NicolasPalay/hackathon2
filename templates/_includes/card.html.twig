@@ -1,7 +1,7 @@
 <div class="card mt-5 hk-cards">
     <img src="{{ device.image }}" alt="" class="card-img-top">
     <div class="card-body">
-        <h5 class="card-title">{{ device.name }}</h5>
+        <h5 class="card-title"><a href="{{ path('app_device_show', {'id': device.id}) }}">{{ device.name }}</a> | <em>{{ device.brand.nameBrand }}</em></h5>
         {#  <h5 class="card-title">{{ device.price }}</h5>#}
     </div>
       {% for b in device.brand %}
