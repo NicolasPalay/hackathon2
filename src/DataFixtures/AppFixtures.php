@@ -54,6 +54,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setEmail($faker->email());
         $user->setRoles(['ROLE_USER']);
+        $user->setFullName($faker->firstName() .' ' . $faker->lastName());
         $user->setPlainPassword('123456');
         $manager->persist($user);
         $manager->flush();
@@ -61,6 +62,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setEmail($faker->email());
         $user->setRoles(['ROLE_Admin']);
+        $user->setFullName($faker->firstName() .' ' . $faker->lastName());
         $user->setPlainPassword('123456');
         $manager->persist($user);
         $manager->flush();
@@ -146,6 +148,7 @@ class AppFixtures extends Fixture
             $device->setState($state);
 
             $device->setName($value);
+
             $device->setImage('phone' . $key . '.jpg');
             $device->setStock(rand(1, 6));
             $device->setPrice(self::PRICE[$key]);

@@ -6,11 +6,11 @@
 
                     <li class="nav-item"><a class="nav-link" href="{{ path('device') }}">Appareils</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ path('app_faq') }}">Foire aux questions</a></li>
-                    {% if is_granted ('ROLE_Admin') %}<li class="nav-item"><a class="nav-link" href="{{ path('admin') }}">Admin</a></li>{% endif %}
+                    {% if is_granted ('ROLE_ADMIN') %}<li class="nav-item"><a class="nav-link" href="{{ path('admin') }}">Admin</a></li>{% endif %}
                     <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}"></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}"><i class="bi bi-person-circle"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">{% if app.user %}
-                            {{ app.user.email }}
+                            {{ app.user.fullName }}
                         {% endif %}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-left"></i></a></li>
             </ul>
