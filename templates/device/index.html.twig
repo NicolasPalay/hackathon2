@@ -5,7 +5,7 @@
 {% block body %}
 
 
-    <h1>Listes des Appareils</h1>
+    <h1>Liste des Appareils</h1>
 
     <div class="container ">
 
@@ -14,7 +14,7 @@
                 {% include '_includes/filter.html.twig' with {form: form} only %}
             </div>
 
-            <div class="col-md-7 hk-listing">
+            <div class="col-md-8 hk-listing">
 
 
                         {% for device in devices %}
@@ -39,7 +39,7 @@
 
 
                             </div>
-
+                            <hr>
                         {% endfor %}
             </div>
             <div class="mx-auto w-50 hk-padding-block">
@@ -49,5 +49,5 @@
     </div>
 
 
-    <a href="{{ path('app_device_new') }}">Create new</a>
+
 {% endblock %}
